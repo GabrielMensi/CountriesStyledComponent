@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 
 export const Home = styled.div`
-  min-width: 100vw;
-  min-height: 100vh;
   background-color: ${({theme}) => theme.bgcolor};
   margin-top: 60px;
   display: flex;

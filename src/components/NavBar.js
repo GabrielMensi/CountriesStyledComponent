@@ -19,6 +19,10 @@ export const NavBar = styled.div`
   .switch-container{
     display: flex;
     align-items: center;
+    padding-right: 20px;
+    @media only screen and (max-width: 335px) {
+      padding-right: 0;
+    }
   }
   img{
     width: 30px;
