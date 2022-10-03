@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DetailContainer = styled.div`
   background-color: ${({theme}) => theme.bgcolor};
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `
@@ -43,6 +43,10 @@ export const InfoContainer = styled.div`
     flex-wrap: wrap;
     margin-left: 20px;
   }
+  
+  .seccion{
+    margin-bottom: 20px;
+  }
 
   @media only screen and (min-width: 768px) {
     display: flex;
@@ -60,6 +64,7 @@ export const CountryFlag = styled.div`
     object-fit: contain;
     @media only screen and (min-width: 1024px) {
       margin-right: 50px;
+      width: 30vw;
     }
   }
 `

@@ -17,7 +17,6 @@ function CountryDetail(){
   let languages = [];
   
   const getCountryData = async () => {
-    console.log(params)
     const response = await fetch(countryUrl);
     const countryData = await response.json();
     setCountryData(countryData);
@@ -33,7 +32,7 @@ function CountryDetail(){
 
     
   return (
-    <div>
+    <>
       {countryData ? 
       <DetailContainer>
         <BackButton onClick={() => navigate(-1)}>
@@ -52,12 +51,12 @@ function CountryDetail(){
             </div>
             <div className="seccion">
               <CardInfo><strong>Top Level Domain: </strong>{countryData[0].tld}</CardInfo>
-              <CardInfo><strong>Currencies: </strong>{currencie.map(e => {return (<span> ({e.symbol})  {e.name} - </span>)})}</CardInfo>
-              <CardInfo><strong>Languages: </strong>{language.map(e => {return (<span> {e}. </span>)})}</CardInfo>
+              <CardInfo><strong>Currencies: </strong>{currencie.map(e => {return (<span key={e.name}> ({e.symbol})  {e.name} - </span>)})}</CardInfo>
+              <CardInfo><strong>Languages: </strong>{language.map(e => {return (<span key={e}> {e}. </span>)})}</CardInfo>
             </div>
             <CardInfo><strong>Border Countries: </strong></CardInfo>
             <div className="border-countries">
-              {countryData[0].borders ? countryData[0].borders.map(e => <Link to={`/countries/${e}`}><BorderCountries >{e}</BorderCountries></Link>) : null}
+              {countryData[0].borders ? countryData[0].borders.map(e => <Link to={`/countries/${e}`} key={e}><BorderCountries >{e}</BorderCountries></Link>) : null}
             </div>
           </div>
         </InfoContainer>
@@ -65,7 +64,7 @@ function CountryDetail(){
         
       </DetailContainer>
       : 'cargando...'}
-    </div>
+    </>
   )
 }
 

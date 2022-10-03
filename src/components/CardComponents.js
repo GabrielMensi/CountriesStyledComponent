@@ -4,7 +4,7 @@ export const CardTitle = styled.h3`
   font-size: 18px;
   color: ${({theme}) => theme.text};
   font-weight: 600;
-  margin: 10px 20px;
+  margin: 20px 20px;
   letter-spacing: 0.5px;
 `
 
