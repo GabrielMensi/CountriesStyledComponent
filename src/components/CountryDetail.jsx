@@ -43,7 +43,6 @@ function CountryDetail(){
           <div className="desktop">
             <CardTitle>{countryData[0].name.official}</CardTitle>
             <div className="seccion">
-              <CardInfo><strong>Native Name: </strong>{countryData[0].name.official}</CardInfo>
               <CardInfo><strong>Population: </strong>{countryData[0].population.toLocaleString()}</CardInfo>
               <CardInfo><strong>Region: </strong>{countryData[0].region}</CardInfo>
               <CardInfo><strong>Sub Region: </strong>{countryData[0].subregion}</CardInfo>
@@ -63,7 +62,7 @@ function CountryDetail(){
        
         
       </DetailContainer>
-      : 'cargando...'}
+      : null}
     </>
   )
 }

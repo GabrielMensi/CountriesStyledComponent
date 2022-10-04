@@ -8,6 +8,6 @@ export const CardsContainer = styled.div`
   justify-content: center;
   column-gap: 20px;
   width: 90vw;
-  min-height: 50vw;
+  /* min-height: 50vw; */
   height: auto;
 `

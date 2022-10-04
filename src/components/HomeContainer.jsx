@@ -5,6 +5,7 @@ import { CardsContainer } from './CardsContainer';
 import { DropDown } from './DropDown';
 import { Home } from './Home';
 import { Link } from "react-router-dom";
+import { LoadCard } from "./LoadCard";
 
 export function HomeContainer() {
 
@@ -202,14 +203,14 @@ export function HomeContainer() {
             <Link key={e.name.official} to={`/countries/${e.cioc ? e.cioc : e.cca3 }`}>
               <Card >
                 <img src={e.flags.png} alt={e.name.official + ' flag'}></img>
-                <CardTitle>{e.name.official}</CardTitle>
+                <CardTitle>{e.name.common}</CardTitle>
                 <CardInfo><strong>Population:</strong> {e.population.toLocaleString()}</CardInfo>
                 <CardInfo><strong>Region:</strong> {e.region}</CardInfo>
                 <CardInfo><strong>Capital:</strong> {e.capital}</CardInfo>
               </Card>
             </Link>
             : null ))
-            : <> <Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /> </>
+            : <LoadCard></LoadCard>
           }
             
           </CardsContainer>

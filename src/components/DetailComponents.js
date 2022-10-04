@@ -32,6 +32,7 @@ export const InfoContainer = styled.div`
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+  background-color: ${({theme}) => theme.bgcolor};
   @media only screen and (min-width: 1024px){
     display: flex;
     flex-direction: row;

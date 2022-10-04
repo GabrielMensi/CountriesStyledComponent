@@ -8,9 +8,9 @@ export const Home = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 
   .inputs-container{
-    /* border: 1px solid blue; */
     width: 90vw;
     min-width: 300px;
     margin-top: 20px;
