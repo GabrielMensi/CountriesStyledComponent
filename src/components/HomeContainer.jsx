@@ -194,12 +194,12 @@ export function HomeContainer() {
           <CardsContainer>
           { loaded ? 
           countries
+          .filter(e => e.name.official.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) || e.name.common.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
           .slice(
             (page - 1) * pageRender,
             (page - 1) * pageRender + pageRender
           )
           .map((e) => ( 
-            e.name.official.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) || e.name.common.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())?
             <Link key={e.name.official} to={`/countries/${e.cioc ? e.cioc : e.cca3 }`}>
               <Card >
                 <img src={e.flags.png} alt={e.name.official + ' flag'}></img>
@@ -208,8 +208,7 @@ export function HomeContainer() {
                 <CardInfo><strong>Region:</strong> {e.region}</CardInfo>
                 <CardInfo><strong>Capital:</strong> {e.capital}</CardInfo>
               </Card>
-            </Link>
-            : null ))
+            </Link>))
             : <LoadCard></LoadCard>
           }
             
